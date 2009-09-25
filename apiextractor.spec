@@ -1,11 +1,12 @@
 Name: apiextractor
 Version: 0.3
-Release: %mkrel 1
+Release: %mkrel 2
 License: GPLv2
 Summary: PySide
 Group: Development/KDE and Qt
 URL: http://www.pyside.org
 Source0:  %name-%version.tar.bz2
+Patch0: apiextractor-0.3-cmake-module-install.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildRequires: cmake
 BuildRequires: qt4-devel
@@ -73,6 +74,7 @@ The API Extractor is based on QtScriptGenerator code.
 
 %prep
 %setup -q
+%patch0 -p0 -b .orig
 
 %build
 %cmake
