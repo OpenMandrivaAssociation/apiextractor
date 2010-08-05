@@ -10,8 +10,6 @@ Patch0: apiextractor-0.3.3-cmake-module-install.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildRequires: cmake
 BuildRequires: qt4-devel
-BuildRequires: boost-devel
-BuildRequires: openssl-devel
 BuildRequires: libxml2-devel >= 2.6.32
 BuildRequires: libxslt-devel >= 1.1.19
 
