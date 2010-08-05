@@ -1,5 +1,5 @@
 Name: apiextractor
-Version: 0.3.3
+Version: 0.7.0
 Release: %mkrel 1
 License: GPLv2
 Summary: PySide
@@ -67,14 +67,13 @@ The API Extractor is based on QtScriptGenerator code.
 %defattr(-,root,root,-)
 %_libdir/*.so
 %_libdir/pkgconfig/*
-%_datadir/cmake*
+%_libdir/cmake/*
 %_includedir/*
 
 #------------------------------------------------------------------------------
 
 %prep
 %setup -q
-%patch0 -p0 -b .orig
 
 %build
 %cmake
