@@ -1,5 +1,5 @@
 Name: apiextractor
-Version: 0.9.3
+Version: 0.9.4
 Release: %mkrel 1
 License: GPLv2
 Summary: PySide
