@@ -1,6 +1,6 @@
 Name: apiextractor
 Version: 0.10.3
-Release: %mkrel 1
+Release: 2
 License: GPLv2
 Summary: PySide
 Group: Development/KDE and Qt
@@ -74,6 +74,7 @@ The API Extractor is based on QtScriptGenerator code.
 %setup -q
 
 %build
+sed 's/-Wno-strict-aliasing/-fno-strict-aliasing/' -i CMakeLists.txt
 %cmake
 %make
 
