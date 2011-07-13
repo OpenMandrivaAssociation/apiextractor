@@ -1,6 +1,6 @@
 Name: apiextractor
 Version: 0.10.3
-Release: 2
+Release: %mkrel 3
 License: GPLv2
 Summary: PySide
 Group: Development/KDE and Qt
