@@ -1,13 +1,12 @@
 Name: apiextractor
-Version: 0.10.4
-Release: %mkrel 1
+Version: 0.10.6
+Release: 1
 License: GPLv2
 Summary: PySide
 Group: Development/KDE and Qt
 URL: http://www.pyside.org
 Source0:  http://www.pyside.org/files/%name-%version.tar.bz2
 Patch0: apiextractor-0.3.3-cmake-module-install.patch
-BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildRequires: cmake
 BuildRequires: qt4-devel
 BuildRequires: libxml2-devel >= 2.6.32
@@ -39,7 +38,6 @@ by specific generators using the API Extractor library.
 The API Extractor is based on QtScriptGenerator code.
 
 %files -n %{libname}
-%defattr(-,root,root,-)
 %_libdir/libapiextractor.so.%{major}*
 
 #------------------------------------------------------------------------------
@@ -62,7 +60,6 @@ by specific generators using the API Extractor library.
 The API Extractor is based on QtScriptGenerator code.
 
 %files -n %{libnamedev}
-%defattr(-,root,root,-)
 %_libdir/*.so
 %_libdir/pkgconfig/*
 %_libdir/cmake/*
@@ -79,9 +76,4 @@ sed 's/-Wno-strict-aliasing/-fno-strict-aliasing/' -i CMakeLists.txt
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std -C build
-
-%clean
-rm -rf %buildroot
-
