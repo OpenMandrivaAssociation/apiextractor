@@ -1,12 +1,11 @@
 Name: apiextractor
-Version: 0.10.6
+Version: 0.10.7
 Release: 1
 License: GPLv2
 Summary: PySide
 Group: Development/KDE and Qt
 URL: http://www.pyside.org
-Source0:  http://www.pyside.org/files/%name-%version.tar.bz2
-Patch0: apiextractor-0.3.3-cmake-module-install.patch
+Source0:  http://www.pyside.org/files/%{name}-%{version}.tar.bz2
 BuildRequires: cmake
 BuildRequires: qt4-devel
 BuildRequires: libxml2-devel >= 2.6.32
