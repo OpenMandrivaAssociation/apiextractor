@@ -1,15 +1,15 @@
-Name: apiextractor
-Version: 0.10.8
-Release: 1
-License: GPLv2
-Summary: PySide
-Group: Development/KDE and Qt
-URL: http://www.pyside.org
-Source0:  http://www.pyside.org/files/%{name}-%{version}.tar.bz2
-BuildRequires: cmake
-BuildRequires: qt4-devel
-BuildRequires: libxml2-devel >= 2.6.32
-BuildRequires: libxslt-devel >= 1.1.19
+Name:		apiextractor
+Version:	0.10.10
+Release:	1
+License:	GPLv2
+Summary:	PySide
+Group:		Development/KDE and Qt
+URL:		http://www.pyside.org
+Source0:	http://www.pyside.org/files/%{name}-%{version}.tar.bz2
+BuildRequires:	cmake
+BuildRequires:	qt4-devel
+BuildRequires:	libxml2-devel >= 2.6.32
+BuildRequires:	libxslt-devel >= 1.1.19
 
 %description
 The API Extractor library is used by the binding generator to parse headers of a
@@ -25,8 +25,8 @@ The API Extractor is based on QtScriptGenerator code.
 %define libname %mklibname apiextractor %{major}
 
 %package -n %{libname}
-Summary: apiextractor main library
-Group: System/Libraries
+Summary:	apiextractor main library
+Group:		System/Libraries
 
 %description -n %{libname}
 The API Extractor library is used by the binding generator to parse headers of a
@@ -37,7 +37,6 @@ by specific generators using the API Extractor library.
 The API Extractor is based on QtScriptGenerator code.
 
 %files -n %{libname}
-%defattr(-,root,root,-)
 %{_libdir}/libapiextractor.so.%{major}*
 
 #------------------------------------------------------------------------------
@@ -45,11 +44,11 @@ The API Extractor is based on QtScriptGenerator code.
 %define libnamedev %mklibname apiextractor -d
 
 %package -n %{libnamedev}
-Summary: apiextractor devel files
-Group: System/Libraries
-Requires: %{libname} = %{version}
-Provides: %{name}-devel = %{version}
-Provides: libapiextractor-devel = %{version}
+Summary:	apiextractor devel files
+Group:		System/Libraries
+Requires:	%{libname} = %{version}
+Provides:	%{name}-devel = %{version}
+Provides:	libapiextractor-devel = %{version}
 
 %description -n %{libnamedev}
 The API Extractor library is used by the binding generator to parse headers of a
@@ -60,7 +59,6 @@ by specific generators using the API Extractor library.
 The API Extractor is based on QtScriptGenerator code.
 
 %files -n %{libnamedev}
-%defattr(-,root,root,-)
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*
 %{_libdir}/cmake/*
@@ -72,7 +70,7 @@ The API Extractor is based on QtScriptGenerator code.
 %setup -q
 
 %build
-sed 's/-Wno-strict-aliasing/-fno-strict-aliasing/' -i CMakeLists.txt
+%__sed 's/-Wno-strict-aliasing/-fno-strict-aliasing/' -i CMakeLists.txt
 %cmake
 %make
 
